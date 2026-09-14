@@ -1,0 +1,49 @@
+== head-bb0cb5b: source /home/nunoras/.no-mistakes/worktrees/53c53b70f8b7/01M2EKZZA2DXP0HN5TNS997TVM; pi 0.85.1
+settings.json at start: {"hideThinkingBlock":false,"terminal":{"clearOnShrink":false}}
+PASS: Calm on + expanded: first-turn reasoning ALPHA not shown
+PASS: Calm on + expanded: final reasoning BETA not shown
+PASS: Calm on + expanded: final answer visible
+PASS: Calm on + expanded: no 'Thinking...' label
+stream probe 'Think hard about something else': frames before reply landed=114, frames showing streamed reasoning=0
+PASS: Calm on + expanded: a streaming window of >=40 frames was observed
+PASS: Calm on + expanded: streamed reasoning never appeared mid-stream
+PASS: Calm on + expanded: mid-stream snapshot exists and has no reasoning and no reply yet
+PASS: Calm on + expanded: streamed reasoning absent after it settled
+PASS: Calm off + expanded: first-turn reasoning ALPHA visible again
+PASS: Calm off + expanded: final reasoning BETA visible again
+PASS: Calm off + expanded: streamed reasoning visible again
+PASS: Calm off: tool row for probe.txt restored
+PASS: Calm off + Ctrl+T collapse: Pi status confirms hidden
+PASS: Calm off + Ctrl+T collapse: 'Thinking...' label shown
+PASS: Calm off + Ctrl+T collapse: reasoning text hidden by Pi
+PASS: Calm off + Ctrl+T expand: reasoning visible again
+stream probe 'Control run with Calm off': frames before reply landed=121, frames showing streamed reasoning=120
+PASS: control (Calm off): streamed reasoning IS visible mid-stream, so the probe can detect leaks
+PASS: Calm re-enabled + expanded: ALPHA hidden
+PASS: Calm re-enabled + expanded: BETA hidden
+PASS: Calm re-enabled + expanded: streamed reasoning hidden
+PASS: Calm re-enabled + expanded: Calm-off control reasoning hidden
+PASS: Calm re-enabled + expanded: answers still visible
+PASS: Calm re-enabled + expanded: no 'Thinking...' label
+Pi settings.json after Calm toggles: {
+  "hideThinkingBlock": false,
+  "terminal": {
+    "clearOnShrink": false
+  },
+  "lastChangelogVersion": "0.85.1"
+}
+PASS: Pi's own hideThinkingBlock preference left at false by Calm
+{
+  "thinkingBlocks": 4,
+  "texts": [
+    "LIVE_REASONING_ALPHA the captain asked me to look at the probe file fi",
+    "LIVE_REASONING_BETA the probe says what I expected, so I can answer.",
+    "LIVE_STREAM_REASONING step 1 weighing options. LIVE_STREAM_REASONING s",
+    "LIVE_CONTROL_REASONING step 1 weighing options. LIVE_CONTROL_REASONING"
+  ]
+}
+PASS: export (Calm on) DOM has ALPHA reasoning
+PASS: export (Calm on) DOM has BETA reasoning
+PASS: export (Calm on) DOM has streamed reasoning
+PASS: export (Calm on) DOM has Calm-off control reasoning
+== head-bb0cb5b summary: 28 passed, 0 failed

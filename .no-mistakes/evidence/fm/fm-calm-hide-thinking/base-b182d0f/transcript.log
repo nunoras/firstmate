@@ -1,0 +1,7 @@
+== base-b182d0f: source /tmp/calm-base-src-UXuV; pi 0.85.1
+settings.json at start: {"hideThinkingBlock":false,"terminal":{"clearOnShrink":false}}
+FAIL: Calm on + expanded: first-turn reasoning ALPHA not shown
+FAIL: Calm on + expanded: final reasoning BETA not shown
+PASS: Calm on + expanded: final answer visible
+PASS: Calm on + expanded: no 'Thinking...' label
+== base-b182d0f summary: 2 passed, 2 failed

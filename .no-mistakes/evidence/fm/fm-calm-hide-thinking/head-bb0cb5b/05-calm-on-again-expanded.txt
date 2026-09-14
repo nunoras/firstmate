@@ -1,0 +1,48 @@
+
+ pi v0.85.1
+ escape interrupt · ctrl+c/ctrl+d clear/exit · / commands · ! bash · ctrl+o more
+ Press ctrl+o to show full startup help and loaded resources.
+
+ Pi can explain its own features and look up its docs. Ask it how to use or extend Pi.
+
+[Skills]
+  no-mistakes
+
+[Extensions]
+  fm-calm.ts, live-provider.ts
+
+
+ Warning: fd not found. Offline mode enabled, skipping download.
+ Warning: ripgrep not found. Offline mode enabled, skipping download.
+
+ Warning: tmux extended-keys is off. Modified Enter keys may not work. Add `set -g extended-keys on` to
+ ~/.tmux.conf and restart tmux.
+
+
+ Please check the probe file
+
+
+ LIVE_FINAL_ANSWER the probe file is fine.
+
+
+ Think hard about something else
+
+
+ LIVE_STREAM_DONE second answer.
+
+ Thinking blocks: visible
+
+
+ Control run with Calm off
+
+
+ LIVE_CONTROL_DONE third answer.
+
+ Tool output: collapsed
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+/tmp/calm-live-head-bb0cb5b-FiQP/project (master)
+↑6.2k ↓793 R2.9k W6.2k CH23.7% 55.5%/8.2k (auto)                                 (calm-live) reasoner • medium
+

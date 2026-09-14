@@ -1,0 +1,63 @@
+
+ pi v0.85.1
+ escape interrupt · ctrl+c/ctrl+d clear/exit · / commands · ! bash · ctrl+o more
+ Press ctrl+o to show full startup help and loaded resources.
+
+ Pi can explain its own features and look up its docs. Ask it how to use or extend Pi.
+
+[Skills]
+  no-mistakes
+
+[Extensions]
+  fm-calm.ts, live-provider.ts
+
+
+ Warning: fd not found. Offline mode enabled, skipping download.
+ Warning: ripgrep not found. Offline mode enabled, skipping download.
+
+ Warning: tmux extended-keys is off. Modified Enter keys may not work. Add `set -g extended-keys on` to
+ ~/.tmux.conf and restart tmux.
+
+
+ Please check the probe file
+
+
+ LIVE_REASONING_ALPHA the captain asked me to look at the probe file first.
+
+
+ read probe.txt
+
+
+ LIVE_REASONING_BETA the probe says what I expected, so I can answer.
+
+ LIVE_FINAL_ANSWER the probe file is fine.
+
+
+ Think hard about something else
+
+
+ LIVE_STREAM_REASONING step 1 weighing options. LIVE_STREAM_REASONING step 2 weighing options.
+ LIVE_STREAM_REASONING step 3 weighing options. LIVE_STREAM_REASONING step 4 weighing options.
+ LIVE_STREAM_REASONING step 5 weighing options. LIVE_STREAM_REASONING step 6 weighing options.
+ LIVE_STREAM_REASONING step 7 weighing options. LIVE_STREAM_REASONING step 8 weighing options.
+ LIVE_STREAM_REASONING step 9 weighing options. LIVE_STREAM_REASONING step 10 weighing options.
+ LIVE_STREAM_REASONING step 11 weighing options. LIVE_STREAM_REASONING step 12 weighing options.
+ LIVE_STREAM_REASONING step 13 weighing options. LIVE_STREAM_REASONING step 14 weighing options.
+ LIVE_STREAM_REASONING step 15 weighing options. LIVE_STREAM_REASONING step 16 weighing options.
+ LIVE_STREAM_REASONING step 17 weighing options. LIVE_STREAM_REASONING step 18 weighing options.
+ LIVE_STREAM_REASONING step 19 weighing options. LIVE_STREAM_REASONING step 20 weighing options.
+ LIVE_STREAM_REASONING step 21 weighing options. LIVE_STREAM_REASONING step 22 weighing options.
+ LIVE_STREAM_REASONING step 23 weighing options. LIVE_STREAM_REASONING step 24 weighing options.
+ LIVE_STREAM_REASONING step 25 weighing options. LIVE_STREAM_REASONING step 26 weighing options.
+ LIVE_STREAM_REASONING step 27 weighing options. LIVE_STREAM_REASONING step 28 weighing options.
+ LIVE_STREAM_REASONING step 29 weighing options. LIVE_STREAM_REASONING step 30 weighing options.
+
+ LIVE_STREAM_DONE second answer.
+
+ Tool output: collapsed
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+/tmp/calm-live-head-bb0cb5b-FiQP/project (master)
+↑4.6k ↓419 R1.9k W4.6k CH27.4% 46.7%/8.2k (auto)                                 (calm-live) reasoner • medium
