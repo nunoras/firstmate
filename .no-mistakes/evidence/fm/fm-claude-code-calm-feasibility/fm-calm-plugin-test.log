@@ -1,0 +1,45 @@
+$ CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 claude plugin validate .
+Validating plugin manifest: /home/nunoras/.no-mistakes/worktrees/53c53b70f8b7/01M2HCR7YKJF9AF0P1J3536RHP/claude-code-mods/fm-calm/.claude-plugin/plugin.json
+
+Validating hooks: /home/nunoras/.no-mistakes/worktrees/53c53b70f8b7/01M2HCR7YKJF9AF0P1J3536RHP/claude-code-mods/fm-calm/hooks/hooks.json
+
+  ❯ index.ts hooks: session.start, command.run{command=calm}, ui.render{component=ToolUse}, ui.render{component=ToolResult}, ui.render{component=ToolGroup}, ui.render{component=UserMessage}
+  ❯ index.ts calls: $.command.register, $.env.get, $.fs.exists, $.fs.read, $.fs.write, $.ui.invalidate
+  ❯ index.ts env writes: nothing
+  ❯ index.ts env reads: FM_CONFIG_OVERRIDE, FM_HOME, FM_ROOT_OVERRIDE
+
+✔ Validation passed
+
+$ CLAUDE_CODE_ENABLE_FUNCTION_HOOKS=1 claude plugin test .
+
+tests/operational-input.test.ts:
+(pass) the v1 header marker is recognized [1.85ms]
+(pass) the from-firstmate marker is recognized [0.29ms]
+(pass) the legacy supervisor-escalate marker is recognized [0.21ms]
+(pass) a genuine typed prompt is not operational [0.19ms]
+(pass) non-string and empty text are not operational [0.32ms]
+(pass) row detection defers to text detection [0.72ms]
+
+tests/preference.test.ts:
+(pass) preference values match the shared config/calm contract [2.55ms]
+(pass) config path resolution mirrors the Pi extension order [0.94ms]
+
+tests/presentation.test.ts:
+(pass) a hidden row is an empty column box [3.03ms]
+(pass) shading is off for every site while Calm is off [1.65ms]
+(pass) tool call, tool result and folded tool group rows are shaded whatever they carry [1.29ms]
+(pass) only firstmate operational user rows are shaded [2.00ms]
+
+tests/render-sites.test.ts:
+(pass) Calm starts off, and /calm reports each new state [52.25ms]
+(pass) the stored choice is read back at session start [23.41ms]
+(pass) an unreadable stored choice leaves Calm off rather than failing the session [24.38ms]
+(pass) toggling writes the choice through and asks for one redraw [20.61ms]
+(pass) tool call and tool result rows are replaced by an empty row while Calm is on [23.56ms]
+(pass) a genuine prompt row survives and an operational row does not [19.76ms]
+(pass) the folded tool group, thinking summary and all, is replaced by an empty row [34.28ms]
+(pass) the working row is left to Claude Code's own spinner [20.51ms]
+
+ 20 pass
+ 0 fail
+Ran 20 tests across 4 files. [0.49s]
