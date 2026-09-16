@@ -1,0 +1,11 @@
+watch.out:
+signal: /tmp/fm-watch-triage-tests.kcBJue/live-first-sight/state/first.status /tmp/fm-watch-triage-tests.kcBJue/live-first-sight/state/first.turn-ended
+drain:
+1789524846	3	signal	first.status	needs-decision: /tmp/fm-watch-triage-tests.kcBJue/live-first-sight/state/first.status /tmp/fm-watch-triage-tests.kcBJue/live-first-sight/state/first.turn-ended
+1789524846	4	signal	first.turn-ended	signal: /tmp/fm-watch-triage-tests.kcBJue/live-first-sight/state/first.status /tmp/fm-watch-triage-tests.kcBJue/live-first-sight/state/first.turn-ended
+wake annotation: latest wake-EVENT observed at drain, not current state: first.status: needs-decision: choose deploy target
+OPEN DECISIONS (still open, folded from the durable status logs - not just the latest line):
+first needs-decision: choose deploy target
+OPEN DECISIONS: close one by answering it: bin/fm-send.sh <task> --resolve-key <key> '<answer>'
+status:
+needs-decision: choose deploy target

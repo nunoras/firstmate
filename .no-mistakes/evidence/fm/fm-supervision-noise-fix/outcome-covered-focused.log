@@ -1,0 +1,35 @@
+=== RUN test_turn_ended_outcome_covered_absorbed ===
+ok - a bare turn-end whose status is already outcome-covered is absorbed
+=== RUN test_turn_ended_outcome_covered_new_status_surfaces ===
+ok - a status append after outcome coverage surfaces the next bare turn-end
+=== RUN test_turn_ended_outcome_covered_absent_index_surfaces ===
+ok - an absent outcome index leaves bare turn-end surfacing unchanged
+=== RUN test_turn_ended_outcome_covered_ident_mismatch_surfaces ===
+ok - an identity-mismatched outcome index leaves bare turn-end surfacing
+=== RUN test_turn_ended_outcome_covered_bound_expires ===
+ok - an expired outcome-covered bound surfaces one wake and clears the window
+=== RUN test_turn_ended_outcome_covered_status_batch_never_uses_proof ===
+ok - a batch containing any .status file never uses the outcome-covered proof
+=== RUN test_turn_ended_outcome_covered_e2e_zero_turn_and_first_sights ===
+ok - covered turn-end sequence stays zero-turn while first sights still queue once each
+=== RUN test_terminal_stale_outcome_covered_absorbed ===
+ok - a covered terminal-status pane re-hash is absorbed once the outcome covers it
+=== RUN test_terminal_stale_outcome_covered_new_status_surfaces ===
+ok - a new status event after outcome coverage surfaces terminal stale immediately
+=== RUN test_turn_ended_outcome_covered_post_steer_stop_surfaces ===
+ok - a steer newer than the covering outcome surfaces the worker's next silent stop
+=== RUN test_terminal_stale_outcome_covered_post_steer_death_surfaces ===
+ok - a worker that dies after a steer with a covered terminal status surfaces
+=== RUN test_terminal_stale_outcome_covered_static_pane_stays_silent ===
+ok - an unchanged covered terminal pane stays silent after its first absorb
+=== RUN test_terminal_stale_outcome_covered_busy_then_stop_surfaces ===
+ok - the first stop after the pane was busy again surfaces despite outcome coverage
+=== RUN test_turn_ended_outcome_covered_steer_acked_before_report_surfaces ===
+ok - a worker steered before its covering outcome still surfaces the stop that follows
+=== RUN test_turn_ended_outcome_covered_branch_order_steer_then_stop_surfaces ===
+ok - a steer the covering outcome outlived still surfaces the worker's next stop
+=== RUN test_turn_ended_outcome_covered_after_reported_steer_still_absorbs ===
+ok - inbox bookkeeping after a reported steer does not break outcome coverage
+=== RUN test_turn_ended_outcome_covered_unhandled_steer_surfaces ===
+ok - an outstanding unhandled steer surfaces the worker's next silent stop
+FOCUSED_EXIT=0

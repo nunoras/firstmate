@@ -1,0 +1,15 @@
+### The branch already reported 'PR ready' for ship42. The worker's pane now ends three more turns.
+  turn-end 1 -> absorbed in shell, firstmate still asleep
+  turn-end 2 -> absorbed in shell, firstmate still asleep
+  turn-end 3 -> absorbed in shell, firstmate still asleep
+  watcher triage log:
+    [2026-09-16T01:29:48+0000] absorbed benign signal (outcome-covered)
+    [2026-09-16T01:29:51+0000] absorbed benign signal (outcome-covered)
+    [2026-09-16T01:29:54+0000] absorbed benign signal (outcome-covered)
+  durable wake queue: []
+  stdout (the wake reason firstmate would be woken with): []
+
+### Adversarial: an unhandled steer lands in the worker inbox after the covering outcome.
+  watcher exited, waking firstmate with: signal: /tmp/fm-live2.QDECkx/state/ship42.turn-ended
+  drained wake queue:
+    1789522197	2	signal	ship42.turn-ended	signal: /tmp/fm-live2.QDECkx/state/ship42.turn-ended

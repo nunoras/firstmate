@@ -1,0 +1,7 @@
+ok=1
+busy-marker:
+watch.out:
+stale: test:live-busy
+shared:
+ls: cannot access '/tmp/fm-watch-triage-tests.kcBJue/live-busy/state/.paused-resurfaced-test_live-busy': No such file or directory
+absent

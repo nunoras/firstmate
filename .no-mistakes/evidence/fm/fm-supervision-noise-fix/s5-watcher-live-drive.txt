@@ -1,0 +1,16 @@
+### The branch already reported 'PR ready' for ship42. The worker's pane now ends three more turns.
+  turn-end 1 -> absorbed in shell, firstmate still asleep
+  turn-end 2 -> absorbed in shell, firstmate still asleep
+  turn-end 3 -> absorbed in shell, firstmate still asleep
+  watcher triage log:
+    [2026-09-16T01:29:12+0000] absorbed benign signal (outcome-covered)
+    [2026-09-16T01:29:14+0000] absorbed benign signal (outcome-covered)
+    [2026-09-16T01:29:18+0000] absorbed benign signal (outcome-covered)
+  durable wake queue: []
+  stdout (the wake reason firstmate would be woken with): []
+
+### Adversarial: the same worker now reports a blocker. It must still wake firstmate.
+  watcher exited, waking firstmate with: stale: test:fm-ship42
+  drained wake queue:
+    1789522159	1	stale	test:fm-ship42	stale: test:fm-ship42
+    ship42 blocked: needs a GitHub token to push

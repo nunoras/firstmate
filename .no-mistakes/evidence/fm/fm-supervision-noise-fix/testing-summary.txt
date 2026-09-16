@@ -1,0 +1,38 @@
+outcome-covered focused suite (17 cases):
+ok - a bare turn-end whose status is already outcome-covered is absorbed
+ok - a status append after outcome coverage surfaces the next bare turn-end
+ok - an absent outcome index leaves bare turn-end surfacing unchanged
+ok - an identity-mismatched outcome index leaves bare turn-end surfacing
+ok - an expired outcome-covered bound surfaces one wake and clears the window
+ok - a batch containing any .status file never uses the outcome-covered proof
+ok - covered turn-end sequence stays zero-turn while first sights still queue once each
+ok - a covered terminal-status pane re-hash is absorbed once the outcome covers it
+ok - a new status event after outcome coverage surfaces terminal stale immediately
+ok - a steer newer than the covering outcome surfaces the worker's next silent stop
+ok - a worker that dies after a steer with a covered terminal status surfaces
+ok - an unchanged covered terminal pane stays silent after its first absorb
+ok - the first stop after the pane was busy again surfaces despite outcome coverage
+ok - a worker steered before its covering outcome still surfaces the stop that follows
+ok - a steer the covering outcome outlived still surfaces the worker's next stop
+ok - inbox bookkeeping after a reported steer does not break outcome coverage
+ok - an outstanding unhandled steer surfaces the worker's next silent stop
+FOCUSED_EXIT=0
+
+live driver:
+SCENARIO|covered-turnend-absorbed|PASS
+SCENARIO|first-sight-decision-surfaces|PASS
+SCENARIO|terminal-rehash-absorbed|PASS
+SCENARIO|static-covered-pane-stays-silent|PASS
+SCENARIO|post-steer-stop-surfaces|PASS
+SCENARIO|busy-then-stop-surfaces|PASS
+SCENARIO|display-only-no-main-turn|PASS
+
+display-only store+marker:
+ok=1
+store:
+{"seq":1,"epoch":1789524871,"task":"task-a","wake":"","verdict":"captain","summary":"display only result","silent":false,"statusEndpoint":0,"statusIdent":"-","action":"none"}
+{"seq":2,"epoch":1789524871,"task":"task-b","wake":"","verdict":"captain","summary":"needs main","silent":false,"statusEndpoint":0,"statusIdent":"-","action":"main"}
+marker:
+2
+refuse:
+error: refusing display-only processed advancement because an action:main captain outcome is in the span through 2

@@ -1,0 +1,7 @@
+ok=1
+watch.out:
+queue:
+empty
+triage:
+[2026-09-16T02:14:10+0000] absorbed stale (outcome-covered): test:live-static
+[2026-09-16T02:14:16+0000] absorbed stale (outcome-covered): test:live-static

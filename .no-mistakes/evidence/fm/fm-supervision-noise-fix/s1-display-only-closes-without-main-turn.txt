@@ -1,0 +1,12 @@
+=== S1: display-only captain result closes with NO main turn ===
+$ fm-branch-outcome.sh append --task ship-42 --verdict captain --summary 'PR ready' --action none
+1
+$ fm-branch-outcome.sh unread
+{"seq":1,"epoch":1789521821,"task":"ship-42","wake":"","verdict":"captain","summary":"shipmate finished auth fix; PR https://example.test/pr/42 checks green","silent":false,"statusEndpoint":0,"statusIdent":"-","action":"none"}
+$ fm-branch-outcome.sh mark-read --through 1
+$ fm-branch-outcome.sh unprocessed   # branch delivered it, main has not acted
+{"seq":1,"epoch":1789521821,"task":"ship-42","wake":"","verdict":"captain","summary":"shipmate finished auth fix; PR https://example.test/pr/42 checks green","silent":false,"statusEndpoint":0,"statusIdent":"-","action":"none"}
+$ fm-branch-outcome.sh mark-processed --through 1 --display-only   # the extension-owned no-turn path
+(exit 0)
+$ fm-branch-outcome.sh unprocessed   # nothing left -> no main confirmation turn opens
+(unprocessed exit=0; empty output above means zero main turns)

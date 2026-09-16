@@ -1,0 +1,24 @@
+=== S2 (adversarial): the no-turn path cannot swallow a result that needs action ===
+$ fm-branch-outcome.sh unprocessed
+{"seq":1,"task":"ship-7","action":"main","summary":"blocked: needs a GitHub token to push"}
+{"seq":2,"task":"ship-8","action":"none","summary":"PR https://example.test/pr/8 checks green"}
+
+$ fm-branch-outcome.sh mark-processed --through 2 --display-only   # spans the blocker
+error: refusing display-only processed advancement because an action:main captain outcome is in the span through 2
+(exit 1)
+$ fm-branch-outcome.sh mark-processed --through 1 --display-only   # the blocker itself
+error: refusing display-only processed advancement because an action:main captain outcome is in the span through 1
+(exit 1)
+$ fm-branch-outcome.sh unprocessed   # blocker still open -> main turn still opens
+{"seq":1,"task":"ship-7","action":"main"}
+{"seq":2,"task":"ship-8","action":"none"}
+
+=== S3 (adversarial): action none refused on a routine row ===
+$ fm-branch-outcome.sh append --task ship-9 --verdict routine --summary 'ran tests' --action none
+error: action none is only valid on captain outcomes
+(exit 2)
+
+=== S4: a legacy row written before this change reads as action main ===
+$ fm-branch-outcome.sh mark-processed --through 3 --display-only
+error: refusing display-only processed advancement because an action:main captain outcome is in the span through 3
+(exit 1)

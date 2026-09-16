@@ -1,0 +1,6 @@
+watch.out:
+shared:
+ls: cannot access '/tmp/fm-watch-triage-tests.kcBJue/live-term/state/.paused-resurfaced-test_live-term': No such file or directory
+absent
+triage:
+[2026-09-16T02:14:09+0000] absorbed stale (outcome-covered): test:live-term

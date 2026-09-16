@@ -1,0 +1,8 @@
+watch.out:
+queue:
+empty
+marker:
+1789524844index:
+fm-branch-outcome-index-v1	7	48	strong:64512:1706533:2026-09-16 02:14:02.710850434 +0000
+triage:
+[2026-09-16T02:14:04+0000] absorbed benign signal (outcome-covered)

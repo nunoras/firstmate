@@ -1,0 +1,4 @@
+watch.out:
+signal: /tmp/fm-watch-triage-tests.kcBJue/live-steer/state/steered.turn-ended
+drain:
+1789524862	2	signal	steered.turn-ended	signal: /tmp/fm-watch-triage-tests.kcBJue/live-steer/state/steered.turn-ended

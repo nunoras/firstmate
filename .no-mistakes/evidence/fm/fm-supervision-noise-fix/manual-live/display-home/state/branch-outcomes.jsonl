@@ -1,0 +1,2 @@
+{"seq":1,"epoch":1789524785,"task":"task-a","wake":"","verdict":"captain","summary":"display only result","silent":false,"statusEndpoint":0,"statusIdent":"-","action":"none"}
+{"seq":2,"epoch":1789524785,"task":"task-b","wake":"","verdict":"captain","summary":"needs main","silent":false,"statusEndpoint":0,"statusIdent":"-","action":"main"}

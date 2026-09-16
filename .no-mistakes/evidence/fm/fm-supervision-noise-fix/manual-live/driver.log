@@ -1,0 +1,8 @@
+SCENARIO|covered-turnend-absorbed|PASS
+SCENARIO|first-sight-decision-surfaces|PASS
+SCENARIO|terminal-rehash-absorbed|PASS
+SCENARIO|static-covered-pane-stays-silent|PASS
+SCENARIO|post-steer-stop-surfaces|PASS
+SCENARIO|busy-then-stop-surfaces|PASS
+SCENARIO|display-only-no-main-turn|PASS
+LIVE_DRIVE_DONE

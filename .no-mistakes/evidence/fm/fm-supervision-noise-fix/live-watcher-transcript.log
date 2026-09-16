@@ -1,0 +1,91 @@
+
+### real tmux pane (task1) content:
+finished, awaiting teardown
+bash-5.2$
+
+### S1 first sight of a new done: status surfaces once
+PASS: watcher exited with: signal: /tmp/fmlive/home.WeDl/state/task1.status
+drain rows:
+1789523995	2	signal	task1.status	signal: /tmp/fmlive/home.WeDl/state/task1.status
+wake annotation: latest wake-EVENT observed at drain, not current state: task1.status: done: PR https://example.test/pr/21 checks green
+STATUS OUTCOME BACKSTOP (newest captain-facing task event has no covering branch outcome):
+task1 done: PR https://example.test/pr/21 checks green
+acked through 2
+
+### S2 branch reports the delivered result through the real outcome CLI with action none
+appended seq=1
+store row: {"seq":1,"epoch":1789523997,"task":"task1","wake":"","verdict":"captain","summary":"PR https://example.test/pr/21 is ready, checks green","silent":false,"statusEndpoint":49,"statusIdent":"strong:64512:1727404:2026-09-16 01:59:53.378072734 +0000","action":"none"}
+index: fm-branch-outcome-index-v1	1	49	strong:64512:1727404:2026-09-16 01:59:53.378072734 +0000
+read cursor: 1
+unprocessed before display-only close: 1 row(s)
+PASS: display-only close advanced processed marker to 1
+unprocessed after: 0 row(s)
+
+### S2b guard: action none on a routine row is refused; display-only close of an action:main row is refused
+PASS: routine+none refused: error: action none is only valid on captain outcomes
+PASS: action:main row refused display-only: error: refusing display-only processed advancement because an action:main captain outcome is in the span through 2
+PASS: normal acknowledgement still closes it (processed=2)
+index after main report: fm-branch-outcome-index-v1	2	49	strong:64512:1727404:2026-09-16 01:59:53.378072734 +0000
+
+### S3 three bare turn-ends on the covered task are absorbed in shell with no wake
+PASS: turn-end #1 absorbed, watcher alive, queue empty
+PASS: turn-end #2 absorbed, watcher alive, queue empty
+PASS: turn-end #3 absorbed, watcher alive, queue empty
+triage log tail:
+[2026-09-16T02:00:01+0000] absorbed benign signal (outcome-covered)
+[2026-09-16T02:00:05+0000] absorbed benign signal (outcome-covered)
+[2026-09-16T02:00:07+0000] absorbed benign signal (outcome-covered)
+covered-since marker: 1789524001
+
+### S4 adversarial: a steer newer than the covered status breaks coverage, turn-end surfaces
+PASS: surfaced: signal: /tmp/fmlive/home.WeDl/state/task1.turn-ended
+drain rows:
+1789524011	4	signal	task1.turn-ended	signal: /tmp/fmlive/home.WeDl/state/task1.turn-ended
+acked through 4
+
+### S5 first sight of a new captain-relevant status event surfaces despite existing coverage
+PASS: surfaced: signal: /tmp/fmlive/home.WeDl/state/task1.status /tmp/fmlive/home.WeDl/state/task1.turn-ended
+drain rows:
+1789524016	7	signal	task1.status	needs-decision: /tmp/fmlive/home.WeDl/state/task1.status /tmp/fmlive/home.WeDl/state/task1.turn-ended
+1789524016	8	signal	task1.turn-ended	signal: /tmp/fmlive/home.WeDl/state/task1.status /tmp/fmlive/home.WeDl/state/task1.turn-ended
+wake annotation: latest wake-EVENT observed at drain, not current state: task1.status: needs-decision: merge now or wait for review?
+OPEN DECISIONS (still open, folded from the durable status logs - not just the latest line):
+task1 needs-decision: merge now or wait for review?
+OPEN DECISIONS: close one by answering it: bin/fm-send.sh <task> --resolve-key <key> '<answer>'
+acked through 8
+
+### S6 adversarial: expired absorb window surfaces one wake and clears the marker
+PASS: surfaced after bound expiry, marker cleared
+drain rows:
+1789524022	10	signal	task1.turn-ended	signal: /tmp/fmlive/home.WeDl/state/task1.turn-ended
+OPEN DECISIONS (still open, folded from the durable status logs - not just the latest line):
+task1 needs-decision: merge now or wait for review?
+OPEN DECISIONS: close one by answering it: bin/fm-send.sh <task> --resolve-key <key> '<answer>'
+acked through 10
+
+### S7 terminal-stale re-hash of a covered finished pane is absorbed; static pane then stays silent
+PASS: new pane hash absorbed, no wake ([2026-09-16T02:00:27+0000] absorbed stale (outcome-covered): fmlive:task1)
+PASS: static pane silent across 4s of polling, no recurring wake
+PASS: second repaint absorbed too
+PASS: shared pause throttle untouched
+
+### S8 terminal-stale with NEW status bytes (not covered) still surfaces
+PASS: uncovered terminal stale surfaced: stale: fmlive:task1
+drain rows:
+1789524044	11	stale	fmlive:task1	stale: fmlive:task1
+OPEN DECISIONS (still open, folded from the durable status logs - not just the latest line):
+task1 blocked: waiting on credential
+OPEN DECISIONS: close one by answering it: bin/fm-send.sh <task> --resolve-key <key> '<answer>'
+acked through 11
+
+### final store
+{"seq":1,"epoch":1789523997,"task":"task1","wake":"","verdict":"captain","summary":"PR https://example.test/pr/21 is ready, checks green","silent":false,"statusEndpoint":49,"statusIdent":"strong:64512:1727404:2026-09-16 01:59:53.378072734 +0000","action":"none"}
+{"seq":2,"epoch":1789523998,"task":"task1","wake":"","verdict":"captain","summary":"needs the captain: choose merge strategy","silent":false,"statusEndpoint":49,"statusIdent":"strong:64512:1727404:2026-09-16 01:59:53.378072734 +0000","action":"main"}
+{"seq":3,"epoch":1789524018,"task":"task1","wake":"","verdict":"captain","summary":"Captain asked to merge now; merging after review","silent":false,"statusEndpoint":95,"statusIdent":"strong:64512:1727404:2026-09-16 01:59:53.378072734 +0000","action":"main"}
+
+### final triage log
+[2026-09-16T02:00:01+0000] absorbed benign signal (outcome-covered)
+[2026-09-16T02:00:05+0000] absorbed benign signal (outcome-covered)
+[2026-09-16T02:00:07+0000] absorbed benign signal (outcome-covered)
+[2026-09-16T02:00:27+0000] absorbed stale (outcome-covered): fmlive:task1
+[2026-09-16T02:00:37+0000] absorbed stale (outcome-covered): fmlive:task1
