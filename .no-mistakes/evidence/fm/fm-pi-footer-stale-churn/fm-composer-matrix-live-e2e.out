@@ -1,0 +1,26 @@
+# claude pane tail at failure:
+#    Accessing workspace:
+#    /home/nunoras/.no-mistakes/worktrees/53c53b70f8b7/01M2M7Y85MV693GSQ1G881PMHX
+#    Quick safety check: Is this a project you created or one you trust? (Like your own code, a well-known open source project, or work from your team). If not, take a moment to review what's in this folder first.
+#    Claude Code'll be able to read, edit, and execute files here.
+#    Security guide
+#    ❯ No, exit
+#      Yes, I trust this folder
+#    Enter to confirm · Esc to cancel
+not ok - claude (2.1.273 (Claude Code)): idle composer never classified empty (last verdict: pending)
+# codex pane tail at failure:
+#   > You are in /home/nunoras/.no-mistakes/worktrees/53c53b70f8b7/01M2M7Y85MV693GSQ1G881PMHX
+#     Do you trust the contents of this directory? Working with untrusted contents comes with higher risk of prompt injection. Trusting the directory allows project-local config, hooks, and exec policies to load.
+#   › 1. Yes, continue
+#     2. No, quit
+#     Press enter to continue
+not ok - codex (codex-cli 0.154.0): idle composer never classified empty (last verdict: unknown)
+# harness absent, not verified here: opencode
+ok - pi (0.85.1): real idle composer classifies empty
+ok - pi (0.85.1): the idle footer sits below the composer separator and stays out of the hashed region
+# harness absent, not verified here: grok
+# harness absent, not verified here: kimi
+# harness absent, not verified here: muse
+ok - strict posture live: a blank shell row classifies unknown and injection defers
+# harness absent, not verified here: zellij (false-positive regression not exercised)
+not ok - live composer-matrix guard observed failures above

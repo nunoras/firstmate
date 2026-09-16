@@ -1,0 +1,42 @@
+# waiting for real pi panes to reach idle+footer
+# fin-pi ready; footer=5-hour: 0% | weekly: 100% (r: 1d 19h 20m)
+# fin-pi-signed ready; footer=5-hour: 0% | weekly: 100% (r: 1d 19h 20m)
+# --- live drive harness=pi bin=pi win=fin-pi ---
+# [pi] strip ok; footer tail:
+#    - pi-mcp-adapter
+#   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+#   
+#   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+#   
+#   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+#   GLM-5.3-Flash  ░░░░|░░░░░░░░░░░░░░░░░  0%  low                                                                                                                                                                       856f3b7
+#   5-hour: 0% | weekly: 100% (r: 1d 19h 20m)
+ok - [pi] finished live worker surfaces terminal stale exactly once on first sight
+# [pi] waiting up to 90s for live footer countdown tick (before: 5-hour: 0% | weekly: 100% (r: 1d 19h 20m))
+# footer tick observed after 49s (whole moved, strip stable)
+#   before: 5-hour: 0% | weekly: 100% (r: 1d 19h 20m)
+#   after:  5-hour: 0% | weekly: 100% (r: 1d 19h 19m)
+ok - [pi] footer-only quota countdown repaint does not re-alarm a finished live worker
+ok - [pi] transcript/content change above the composer produces exactly one new wake
+# --- live drive harness=pi-signed bin=pi-signed win=fin-pi-signed ---
+# [pi-signed] strip ok; footer tail:
+#    - pi-mcp-adapter
+#   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+#   
+#   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+#   
+#   ────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+#   GLM-5.3-Flash  ░░░░|░░░░░░░░░░░░░░░░░  0%  low                                                                                                                                                                       856f3b7
+#   5-hour: 0% | weekly: 100% (r: 1d 19h 19m)
+ok - [pi-signed] finished live worker surfaces terminal stale exactly once on first sight
+# [pi-signed] waiting up to 90s for live footer countdown tick (before: 5-hour: 0% | weekly: 100% (r: 1d 19h 19m))
+# footer tick observed after 32s (whole moved, strip stable)
+#   before: 5-hour: 0% | weekly: 100% (r: 1d 19h 19m)
+#   after:  5-hour: 0% | weekly: 100% (r: 1d 19h 18m)
+ok - [pi-signed] footer-only quota countdown repaint does not re-alarm a finished live worker
+ok - [pi-signed] transcript/content change above the composer produces exactly one new wake
+# --- strip refusal live pane ---
+ok - strip refuses live screen with no separator; watcher falls back to whole capture
+ok - strip refuses live screen with nothing above the separator
+# FAILED=0
+ALL_LIVE_OK

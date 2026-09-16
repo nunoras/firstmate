@@ -1,0 +1,43 @@
+
+π  pi coding agent  v0.85.1
+
+
+[Context]
+  ~/.pi/agent/AGENTS.md, AGENTS.md
+
+[Skills]
+  afk, ahoy, analyze-sessions, ask-user-authority, bearings, bootstrap-diagnostics, captain-hold-lifecycle,
+computer-use, decision-hold-lifecycle, diagnostic-reasoning, dispatch, dispatch-status, domain-modeling,
+firstmate-codexapp, firstmate-coding-guidelines, firstmate-orca, fmx-respond, grill-with-docs, grilling,
+harness-adapters, mcp-scripting, no-mistakes, orca-cli, orchestration, orchestrator, pdf-reader, process-event-sources,
+project-management, quiet, quota-array-dispatch, secondmate-provisioning, setup-dispatch, shepherd, stop-slop, stow,
+stuck-crewmate-recovery, updatefirstmate, web-debug, youtube-transcript
+
+[Extensions]
+  ask-user-question.ts, bash-guard, browser, context.ts, custom-header.ts, fm-branch-supervision.ts, fm-calm.ts,
+fm-primary-pi-watch.ts, fm-primary-turnend-guard.ts, google-image-search, herdr-agent-state.ts, md-link.ts, memory.ts,
+orca-agent-status.ts, orca-prefill.ts, orca-titlebar-spinner.ts, pankajudhas81/pi-claude-auth:src, pi-mcp-adapter,
+prompt-snippets, statusline.ts, web-fetch, web-search, youtube-search, zz-read-only-mode.ts
+
+
+ Error: Failed to load theme "cc-dark": Theme not found: cc-dark
+ Fell back to dark theme.
+
+ Warning: Anthropic subscription auth is active. Third-party harness usage draws from extra usage and is billed per
+ token, not your Claude plan limits. Manage extra usage at https://claude.ai/settings/usage. Disable this warning in
+ /settings.
+
+ Warning: tmux extended-keys is off. Modified Enter keys may not work. Add `set -g extended-keys on` to ~/.tmux.conf
+ and restart tmux.
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ Package Updates Available
+ Package updates are available. Run pi update --extensions
+ Packages:
+ - pi-mcp-adapter
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+Claude Opus 4.8  ░░░░|░░░░░░░░░░░░░░░░░  0%  medium                                                              856f3b7
