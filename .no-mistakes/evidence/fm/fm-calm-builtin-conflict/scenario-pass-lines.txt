@@ -1,0 +1,4 @@
+ok - Calm registers no tool while config/calm is off or on, and supplies built-in row presentation through Pi's own row-definition seam without touching a tool Calm does not present
+ok - with Calm on at Pi load, a second extension registering the built-in bash keeps that name and executes its own tool while Calm still hides and restores built-in rows through Pi's own row-definition seam
+ok - Pi calm centralizes transcript visibility, preserves execution/export data, keeps Pi's stock working row visible while no run is active, and persists its choice across session starts
+ok - Pi calm native E2E replaces the stock working row with a moving, resize-clamped working ship that freezes and resumes across two working periods in one Pi session, clears on abort, keeps captain turns visible, hides exact operational user rows without changing persistence, restores stock rendering Calm-off, survives restart, and preserves export plus Ctrl+O behavior
